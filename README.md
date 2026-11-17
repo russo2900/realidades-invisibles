@@ -24,15 +24,12 @@ nav{height:72px;display:flex;align-items:center;justify-content:space-between;ga
 .btn.sm{padding:10px 16px;font-size:.88rem}
 
 .hero{padding:62px 0;background:radial-gradient(ellipse at 80% 20%,#4b1820 0,transparent 40%),linear-gradient(130deg,#10151d,#090b0f 70%);border-bottom:1px solid var(--line)}
-.hero-content{display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
-.hero-text{flex:1;min-width:300px}
+.hero-content{text-align:center;max-width:850px;margin:0 auto}
 .eyebrow{color:#ff7781;font-weight:800;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase}
-.hero h1{font-size:clamp(2.2rem,6vw,4.6rem);line-height:.98;max-width:850px;margin:18px 0}
+.hero h1{font-size:clamp(2.5rem,6vw,4.8rem);line-height:.98;margin:18px 0}
 .hero h1 em{font-style:normal;color:var(--red)}
-.hero p{max-width:650px;color:var(--muted);font-size:1.1rem}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
-.hero-aside{flex:0 0 320px;max-width:100%}
-.hero-aside .campaign-poster{width:100%;border-radius:14px;border:1px solid var(--line);box-shadow:0 12px 30px rgba(0,0,0,.5);display:block}
+.hero p{color:var(--muted);font-size:1.1rem;margin:0 auto 26px;max-width:650px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
 
 .section{padding:62px 0}
 .section h2{font-size:clamp(1.7rem,4vw,2.5rem);margin:0 0 8px}
@@ -47,14 +44,6 @@ nav{height:72px;display:flex;align-items:center;justify-content:space-between;ga
 .theory-box h3{color:var(--red);margin-top:0;font-size:1.25rem}
 .theory-box p,.theory-box li{color:var(--muted);line-height:1.6}
 .theory-box ul{margin:10px 0 0 20px;padding:0}
-.theory-split{display:flex;gap:26px;align-items:center;flex-wrap:wrap}
-.theory-split-text{flex:1;min-width:280px}
-.theory-split-media{flex:0 0 320px;max-width:100%}
-.theory-split-media img{width:100%;border-radius:10px;border:1px solid var(--line);display:block;background:#000}
-.theory-media-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
-.theory-media-grid figure{margin:0;background:#0c1017;border:1px solid var(--line);border-radius:10px;overflow:hidden}
-.theory-media-grid img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
-.theory-media-grid figcaption{padding:10px 12px;font-size:.82rem;color:var(--muted)}
 
 .table-wrap{width:100%;overflow-x:auto;margin-top:20px}
 table.help-table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}
@@ -84,12 +73,6 @@ table.help-table tr:last-child td{border-bottom:0}
 .yt-input-group{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 .yt-input-group input{flex:1;min-width:240px;padding:12px 14px;background:#0b1017;border:1px solid #3a4657;border-radius:8px;color:#fff;font-size:.92rem}
 
-.campaign-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:28px}
-.campaign-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
-.campaign-card img{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#000}
-.campaign-card.landscape img{aspect-ratio:16/9;object-fit:cover}
-.campaign-info{padding:16px;font-size:.9rem;color:var(--muted)}
-
 .uploadbox{background:linear-gradient(145deg,#171e29,#10151c);border:1px dashed #59677b;border-radius:16px;padding:28px}
 .uploadbox input{display:block;width:100%;margin:18px 0;color:var(--muted)}
 .hint{font-size:.88rem;color:var(--muted)}
@@ -101,9 +84,10 @@ table.help-table tr:last-child td{border-bottom:0}
 .video-info h3{margin:0 0 5px;font-size:1rem}
 .video-info p{margin:0;color:var(--muted);font-size:.86rem}
 .empty{border:1px solid var(--line);border-radius:14px;padding:28px;color:var(--muted);text-align:center;background:var(--panel)}
+
 footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.88rem}
 .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-@media(max-width:760px){.navlinks{display:none}.grid-2,.video-grid{grid-template-columns:1fr}.hero{padding:40px 0}.hero-content,.theory-split{flex-direction:column;align-items:stretch}.hero-aside{order:-1;margin-bottom:20px}.section{padding:46px 0}}
+@media(max-width:760px){.navlinks{display:none}.grid-2,.video-grid{grid-template-columns:1fr}.hero{padding:40px 0}.section{padding:46px 0}}
 </style>
 </head>
 <body>
@@ -114,7 +98,6 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
   <a href="#preguntas">Preguntas &amp; Video</a>
   <a href="#teoria">Teoría</a>
   <a href="#entrevistas">Entrevistas</a>
-  <a href="#campana">Campaña</a>
   <a href="#ley">Proyecto de Ley</a>
 </div>
 <a class="btn" href="#video-youtube">Ver video</a>
@@ -122,14 +105,12 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 
 <main>
 <section class="hero"><div class="wrap"><div class="hero-content">
-  <div class="hero-text">
-    <div class="eyebrow">Trabajo Práctico Grupal · Secundario de Adultos</div>
-    <h1>REALIDADES<br><em>INVISIBLES.</em></h1>
-    <p>Una problemática social y de salud pública. Encuesta comunitaria, marco teórico, afiches de prevención y propuesta de Proyecto de Ley.</p>
-    <div class="actions"><a class="btn" href="#video-youtube">▶ Ver video de preguntas</a><a class="btn secondary" href="#teoria">Leer marco teórico</a></div>
-  </div>
-  <div class="hero-aside">
-    <img src="d30179d4-71d6-4574-9e68-a01312ec76ab.jpg" alt="Afiche Las Drogas El Abismo de tu Vida" class="campaign-poster">
+  <div class="eyebrow">Trabajo Práctico Grupal · Secundario de Adultos</div>
+  <h1>REALIDADES<br><em>INVISIBLES.</em></h1>
+  <p>Una problemática social y de salud pública. Encuesta comunitaria, marco teórico y propuesta de Proyecto de Ley.</p>
+  <div class="actions">
+    <a class="btn" href="#video-youtube">▶ Ver video de preguntas</a>
+    <a class="btn secondary" href="#teoria">Leer marco teórico</a>
   </div>
 </div></div></section>
 
@@ -195,63 +176,42 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 
 </div></section>
 
-<!-- 2. MARCO TEÓRICO CON FOTOS INTERCALADAS -->
+<!-- 2. MARCO TEÓRICO -->
 <section class="section" id="teoria"><div class="wrap">
 <h2>Marco Teórico y Conceptual</h2>
 <p class="lead">Comprender la problemática desde una perspectiva social, humana y de salud pública, evitando prejuicios y estigmas.</p>
 
 <div class="theory-container">
   <div class="theory-box">
-    <div class="theory-split">
-      <div class="theory-split-text">
-        <h3>1. ¿Qué son las drogas y cómo actúan en el organismo?</h3>
-        <p>Son sustancias químicas o naturales que, al ingresar al cuerpo por diversas vías (inhalada, absorbida, inyectada, oral o fumada), alteran el funcionamiento normal del sistema nervioso central y del cerebro.</p>
-        <p><strong>Clasificación según su marco legal y uso clínico:</strong></p>
-        <ul>
-          <li><strong>Drogas legales:</strong> Alcohol, tabaco y cafeína. Permitidas por ley pero de alto riesgo de dependencia con el uso abusivo o prolongado.</li>
-          <li><strong>Drogas ilegales:</strong> Estimulantes ilícitos, opioides no autorizados y compuestos alucinógenos prohibidos por su alto poder adictivo.</li>
-          <li><strong>Fármacos de prescripción:</strong> Medicamentos controlados (ansiolíticos, analgésicos opioides) cuyo uso sin supervisión médica constituye abuso de sustancias.</li>
-        </ul>
-        <p style="margin-top:14px;"><strong>Acción en el organismo:</strong> Modifican la comunicación neuronal y la liberación de neurotransmisores como la dopamina (estimulantes, depresores o alucinógenos).</p>
-      </div>
-      <div class="theory-split-media">
-        <img src="1000354085.jpg" alt="Sustancias e insumos asociados al consumo" loading="lazy">
-      </div>
-    </div>
+    <h3>1. ¿Qué son las drogas y cómo actúan en el organismo?</h3>
+    <p>Son sustancias químicas o naturales que, al ingresar al cuerpo por diversas vías (inhalada, absorbida, inyectada, oral o fumada), alteran el funcionamiento normal del sistema nervioso central y del cerebro.</p>
+    <p><strong>Clasificación según su marco legal y uso clínico:</strong></p>
+    <ul>
+      <li><strong>Drogas legales:</strong> Alcohol, tabaco y cafeína. Permitidas por ley pero de alto riesgo de dependencia con el uso abusivo o prolongado.</li>
+      <li><strong>Drogas ilegales:</strong> Estimulantes ilícitos, opioides no autorizados y compuestos alucinógenos prohibidos por su alto poder adictivo.</li>
+      <li><strong>Fármacos de prescripción:</strong> Medicamentos controlados (ansiolíticos, analgésicos opioides) cuyo uso sin supervisión médica constituye abuso de sustancias.</li>
+    </ul>
+    <p style="margin-top:14px;"><strong>Acción en el organismo:</strong> Modifican la comunicación neuronal y la liberación de neurotransmisores como la dopamina (estimulantes, depresores o alucinógenos).</p>
   </div>
 
   <div class="theory-box">
-    <div class="theory-split">
-      <div class="theory-split-text">
-        <h3>2. Factores de riesgo de la drogadicción</h3>
-        <p>No responde a una sola causa ni a una falta de fuerza de voluntad, sino a múltiples factores interactivos:</p>
-        <ul>
-          <li><strong>Biológicos y genéticos:</strong> Predisposición familiar y edad de inicio temprana (durante la infancia o adolescencia con cerebro en desarrollo).</li>
-          <li><strong>Psicológicos:</strong> Trastornos de salud mental (depresión, ansiedad, TDAH) y dificultad en la regulación emocional o tolerancia a la frustración.</li>
-          <li><strong>Sociales y ambientales:</strong> Entornos familiares disfuncionales, presión de grupo, normalización del consumo y accesibilidad a las sustancias.</li>
-        </ul>
-      </div>
-      <div class="theory-split-media">
-        <img src="1000354092.jpg" alt="Afiche Las drogas destruyen vidas" loading="lazy">
-      </div>
-    </div>
+    <h3>2. Factores de riesgo de la drogadicción</h3>
+    <p>No responde a una sola causa ni a una falta de fuerza de voluntad, sino a múltiples factores interactivos:</p>
+    <ul>
+      <li><strong>Biológicos y genéticos:</strong> Predisposición familiar y edad de inicio temprana (durante la infancia o adolescencia con cerebro en desarrollo).</li>
+      <li><strong>Psicológicos:</strong> Trastornos de salud mental (depresión, ansiedad, TDAH) y dificultad en la regulación emocional o tolerancia a la frustración.</li>
+      <li><strong>Sociales y ambientales:</strong> Entornos familiares disfuncionales, presión de grupo, normalización del consumo y accesibilidad a las sustancias.</li>
+    </ul>
   </div>
 
   <div class="theory-box">
-    <div class="theory-split">
-      <div class="theory-split-text">
-        <h3>3. Síntomas y signos de la adicción</h3>
-        <ul>
-          <li>Compulsión por el consumo y pérdida de control sobre la cantidad o frecuencia.</li>
-          <li>Desarrollo de tolerancia (necesidad de mayor dosis) y síndrome de abstinencia al interrumpir el uso.</li>
-          <li>Preocupación excesiva, abandono de responsabilidades escolares/laborales/familiares y aislamiento social.</li>
-          <li>Conductas de riesgo y persistencia a pesar del daño físico, psicológico o económico evidente.</li>
-        </ul>
-      </div>
-      <div class="theory-split-media">
-        <img src="1000354087.jpg" alt="Riesgo letal de pastillas y sustancias" loading="lazy">
-      </div>
-    </div>
+    <h3>3. Síntomas y signos de la adicción</h3>
+    <ul>
+      <li>Compulsión por el consumo y pérdida de control sobre la cantidad o frecuencia.</li>
+      <li>Desarrollo de tolerancia (necesidad de mayor dosis) y síndrome de abstinencia al interrumpir el uso.</li>
+      <li>Preocupación excesiva, abandono de responsabilidades escolares/laborales/familiares y aislamiento social.</li>
+      <li>Conductas de riesgo y persistencia a pesar del daño físico, psicológico o económico evidente.</li>
+    </ul>
   </div>
 
   <div class="theory-box">
@@ -260,36 +220,11 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
       <li><strong>Salud física:</strong> Alteración neuronal crónica, hipertensión, arritmias, infartos, daño hepático severo (cirrosis) e infecciones graves por uso compartido de jeringas (VIH, Hepatitis B y C).</li>
       <li><strong>Salud mental y cognitiva:</strong> Cuadros depresivos, ataques de pánico, psicosis, deterioro cognitivo, pérdida de memoria, desregulación emocional y anhedonia (incapacidad para sentir placer).</li>
     </ul>
-    <div class="theory-media-grid">
-      <figure>
-        <img src="1000354088.jpg" alt="Pulmón sano vs pulmón con drogas" loading="lazy">
-        <figcaption><strong>Salud respiratoria:</strong> Pulmón sano vs. pulmón dañado.</figcaption>
-      </figure>
-      <figure>
-        <img src="1000354086.jpg" alt="Cerebro sano vs cerebro con drogas" loading="lazy">
-        <figcaption><strong>Salud neurológica:</strong> Cerebro sano vs. cerebro afectado.</figcaption>
-      </figure>
-      <figure>
-        <img src="1000354090.jpg" alt="Deterioro dental por consumo" loading="lazy">
-        <figcaption><strong>Deterioro bucal:</strong> Daño dental severo.</figcaption>
-      </figure>
-      <figure>
-        <img src="1000354089.jpg" alt="Infecciones y marcas por inyección" loading="lazy">
-        <figcaption><strong>Riesgo infeccioso:</strong> Lesiones cutáneas y transmisión sanguínea.</figcaption>
-      </figure>
-    </div>
   </div>
 
   <div class="theory-box">
-    <div class="theory-split">
-      <div class="theory-split-text">
-        <h3>5. Tratamiento multidisciplinario</h3>
-        <p>Requiere un abordaje personalizado que incluye desintoxicación médica supervisada, intervención farmacológica (para patología dual), psicoterapia especializada (TCC), grupos de apoyo, reinserción social y acompañamiento terapéutico cotidiano.</p>
-      </div>
-      <div class="theory-split-media">
-        <img src="1000354093.jpg" alt="Afiche Las adicciones te roban todo" loading="lazy">
-      </div>
-    </div>
+    <h3>5. Tratamiento multidisciplinario</h3>
+    <p>Requiere un abordaje personalizado que incluye desintoxicación médica supervisada, intervención farmacológica (para patología dual), psicoterapia especializada (TCC), grupos de apoyo, reinserción social y acompañamiento terapéutico cotidiano.</p>
   </div>
 
   <div class="theory-box">
@@ -319,57 +254,8 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 <div id="videoList" class="video-grid"><div class="empty" style="grid-column:1/-1">Todavía no hay videos generales publicados en este dispositivo. ¡Pronto vas a encontrar nuestras entrevistas acá!</div></div>
 </div></section>
 
-<!-- 4. CAMPAÑA VISUAL COMPLETA -->
-<section class="section" id="campana"><div class="wrap">
-<h2>Campaña Visual y Afiches Escolares</h2>
-<p class="lead">Material gráfico oficial de prevención y concientización contra el consumo problemático.</p>
-
-<div class="campaign-grid">
-  <article class="campaign-card">
-    <img src="1000354092.jpg" alt="Afiche Las drogas destruyen vidas" loading="lazy">
-    <div class="campaign-info"><strong>Campaña Escolar:</strong> Las drogas destruyen vidas. #PrevenciónEscolar</div>
-  </article>
-  <article class="campaign-card">
-    <img src="1000354093.jpg" alt="Afiche Las adicciones te roban todo" loading="lazy">
-    <div class="campaign-info"><strong>Campaña Escolar:</strong> Las adicciones te roban todo.</div>
-  </article>
-  <article class="campaign-card">
-    <img src="1000354091.jpg" alt="Afiche El abismo de tu vida" loading="lazy">
-    <div class="campaign-info"><strong>Afiche de Concientización:</strong> El abismo de tu vida.</div>
-  </article>
-  <article class="campaign-card">
-    <img src="d30179d4-71d6-4574-9e68-a01312ec76ab.jpg" alt="Afiche Las drogas el abismo de tu vida" loading="lazy">
-    <div class="campaign-info"><strong>Afiche Principal:</strong> ¡Di no! Es el fin de todo.</div>
-  </article>
-  <article class="campaign-card landscape">
-    <img src="1000354089.jpg" alt="Daños físicos" loading="lazy">
-    <div class="campaign-info"><strong>Impacto físico:</strong> Deterioro y lesiones en la salud.</div>
-  </article>
-  <article class="campaign-card landscape">
-    <img src="1000354088.jpg" alt="Pulmón sano vs con drogas" loading="lazy">
-    <div class="campaign-info"><strong>Salud respiratoria:</strong> Comparativa de daños pulmonares.</div>
-  </article>
-  <article class="campaign-card landscape">
-    <img src="1000354085.jpg" alt="Sustancias" loading="lazy">
-    <div class="campaign-info"><strong>Factores de riesgo:</strong> Insumos y sustancias asociadas.</div>
-  </article>
-  <article class="campaign-card landscape">
-    <img src="1000354087.jpg" alt="Riesgo letal" loading="lazy">
-    <div class="campaign-info"><strong>Riesgo crítico:</strong> Fármacos y peligro letal.</div>
-  </article>
-  <article class="campaign-card landscape">
-    <img src="1000354086.jpg" alt="Cerebro" loading="lazy">
-    <div class="campaign-info"><strong>Salud neurológica:</strong> Daño cerebral comparativo.</div>
-  </article>
-  <article class="campaign-card landscape">
-    <img src="1000354090.jpg" alt="Deterioro dental" loading="lazy">
-    <div class="campaign-info"><strong>Consecuencias físicas:</strong> Daño dental severo.</div>
-  </article>
-</div>
-</div></section>
-
-<!-- 5. PROYECTO DE LEY -->
-<section class="section" id="ley" style="background:var(--panel2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);"><div class="wrap">
+<!-- 4. PROYECTO DE LEY -->
+<section class="section" id="ley"><div class="wrap">
 <h2>Propuesta Legislativa Grupal</h2>
 <p class="lead">Nuestra iniciativa para debatir y transformar la realidad desde las leyes y la comunidad.</p>
 
@@ -395,7 +281,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 </div></section>
 
 <!-- PANEL DE CARGA GENERAL -->
-<section class="section" id="publicar"><div class="wrap">
+<section class="section" id="publicar" style="background:var(--panel2);border-top:1px solid var(--line);"><div class="wrap">
 <h2>Panel de carga de videos generales</h2><p class="lead">Seleccioná un archivo de video desde tu dispositivo para agregarlo a la galería de entrevistas.</p>
 <div class="uploadbox">
 <label for="videoTitle"><strong>Título de la entrevista</strong></label>
