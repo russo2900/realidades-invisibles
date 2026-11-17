@@ -23,7 +23,6 @@ nav{height:72px;display:flex;align-items:center;justify-content:space-between;ga
 .btn.secondary{background:#252e3b;border:1px solid #3a4657}
 .btn.sm{padding:10px 16px;font-size:.88rem}
 
-/* Hero con foto al costado */
 .hero{padding:62px 0;background:radial-gradient(ellipse at 80% 20%,#4b1820 0,transparent 40%),linear-gradient(130deg,#10151d,#090b0f 70%);border-bottom:1px solid var(--line)}
 .hero-content{display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
 .hero-text{flex:1;min-width:300px}
@@ -43,7 +42,6 @@ nav{height:72px;display:flex;align-items:center;justify-content:space-between;ga
 .card .q-num{display:inline-block;color:var(--red);font-weight:900;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
 .card p{margin:0;color:var(--muted)}
 
-/* Bloques del Marco Teórico con fotos intercaladas */
 .theory-container{display:grid;grid-template-columns:1fr;gap:24px;margin-top:20px}
 .theory-box{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px}
 .theory-box h3{color:var(--red);margin-top:0;font-size:1.25rem}
@@ -58,7 +56,6 @@ nav{height:72px;display:flex;align-items:center;justify-content:space-between;ga
 .theory-media-grid img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
 .theory-media-grid figcaption{padding:10px 12px;font-size:.82rem;color:var(--muted)}
 
-/* Tabla de Lugares de Ayuda */
 .table-wrap{width:100%;overflow-x:auto;margin-top:20px}
 table.help-table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}
 table.help-table th,table.help-table td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);font-size:.92rem}
@@ -66,12 +63,10 @@ table.help-table th{background:var(--panel2);color:#fff;font-weight:700}
 table.help-table td{color:var(--muted)}
 table.help-table tr:last-child td{border-bottom:0}
 
-/* Ley propuesta */
 .law-box{background:linear-gradient(145deg,#151a24,#0e1219);border:1px solid #3a4657;border-left:4px solid var(--red);border-radius:12px;padding:30px;margin-top:25px}
 .law-box h3{color:#fff;margin-top:0}
 .law-box h4{color:var(--red);margin:20px 0 8px;font-size:1.05rem}
 
-/* Índice y bloque destacado de YouTube */
 .q-index{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:28px}
 .q-index-title{font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin:0 0 12px}
 .q-index-list{display:flex;flex-wrap:wrap;gap:10px}
@@ -89,7 +84,6 @@ table.help-table tr:last-child td{border-bottom:0}
 .yt-input-group{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 .yt-input-group input{flex:1;min-width:240px;padding:12px 14px;background:#0b1017;border:1px solid #3a4657;border-radius:8px;color:#fff;font-size:.92rem}
 
-/* Galería de afiches */
 .campaign-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:28px}
 .campaign-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
 .campaign-card img{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#000}
@@ -134,13 +128,12 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
     <p>Una problemática social y de salud pública. Encuesta comunitaria, marco teórico, afiches de prevención y propuesta de Proyecto de Ley.</p>
     <div class="actions"><a class="btn" href="#video-youtube">▶ Ver video de preguntas</a><a class="btn secondary" href="#teoria">Leer marco teórico</a></div>
   </div>
-  <!-- Foto al costado del título -->
   <div class="hero-aside">
     <img src="d30179d4-71d6-4574-9e68-a01312ec76ab.jpg" alt="Afiche Las Drogas El Abismo de tu Vida" class="campaign-poster">
   </div>
 </div></div></section>
 
-<!-- 1. PRIMERO DE TODO: PREGUNTAS Y VIDEO DE YOUTUBE -->
+<!-- 1. PREGUNTAS Y VIDEO DE YOUTUBE -->
 <section class="section" id="preguntas" style="background:var(--panel2);border-bottom:1px solid var(--line);"><div class="wrap">
 <h2>Preguntas para encontrar una solución</h2>
 <p class="lead">Elegí un eje en el índice para ir directo a la pregunta. Abajo encontrás el video completo con las entrevistas en YouTube.</p>
@@ -191,13 +184,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
   <p class="yt-subtitle">Mirá las respuestas y reflexiones de la comunidad frente a las cuatro preguntas del proyecto.</p>
 
   <div class="youtube-embed" id="embed-general">
-    <!-- ===================================================================== -->
-    <!-- ACÁ PODÉS PEGAR DIRECTAMENTE TU LINK DE YOUTUBE EN EL CÓDIGO:         -->
-    <!-- Reemplazá TU_ID_DE_YOUTUBE en src="https://www.youtube.com/embed/..." -->
-    <!-- Ejemplo: si tu link es https://youtu.be/dQw4w9WgXcQ                   -->
-    <!-- poné: src="https://www.youtube.com/embed/dQw4w9WgXcQ"                 -->
-    <!-- ===================================================================== -->
-    <iframe id="yt-main-iframe" src="https://www.youtube.com/embed/TU_ID_DE_YOUTUBE" title="Video de las entrevistas en YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe id="yt-main-iframe" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video de las entrevistas en YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 
   <div class="yt-input-group">
@@ -214,7 +201,6 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 <p class="lead">Comprender la problemática desde una perspectiva social, humana y de salud pública, evitando prejuicios y estigmas.</p>
 
 <div class="theory-container">
-  <!-- Punto 1 + foto 1000354085.jpg -->
   <div class="theory-box">
     <div class="theory-split">
       <div class="theory-split-text">
@@ -234,7 +220,6 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
     </div>
   </div>
 
-  <!-- Punto 2 + foto 1000354092.jpg -->
   <div class="theory-box">
     <div class="theory-split">
       <div class="theory-split-text">
@@ -252,7 +237,6 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
     </div>
   </div>
 
-  <!-- Punto 3 + foto 1000354087.jpg -->
   <div class="theory-box">
     <div class="theory-split">
       <div class="theory-split-text">
@@ -270,7 +254,6 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
     </div>
   </div>
 
-  <!-- Punto 4 + galería de impacto físico (1000354088.jpg, 1000354086.jpg, 1000354090.jpg, 1000354089.jpg) -->
   <div class="theory-box">
     <h3>4. Consecuencias en la salud física, mental y cognitiva</h3>
     <ul>
@@ -297,7 +280,6 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
     </div>
   </div>
 
-  <!-- Punto 5 + foto 1000354093.jpg -->
   <div class="theory-box">
     <div class="theory-split">
       <div class="theory-split-text">
@@ -310,7 +292,6 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
     </div>
   </div>
 
-  <!-- Punto 6 -->
   <div class="theory-box">
     <h3>6. Lugares donde se puede pedir ayuda</h3>
     <div class="table-wrap">
@@ -496,17 +477,10 @@ document.getElementById('publishBtn').addEventListener('click',async()=>{
 
 function loadYouTubeGeneral(){
   const inputVal=document.getElementById('input-general').value.trim();
-  const embedContainer=document.getElementById('embed-general');
+  const iframeEl=document.getElementById('yt-main-iframe');
   if(!inputVal) return;
 
   let videoId='';
-  if(inputVal.includes('<iframe')){
-    embedContainer.innerHTML=inputVal;
-    const iframe=embedContainer.querySelector('iframe');
-    if(iframe){iframe.style.width='100%';iframe.style.height='100%';iframe.style.border='0';}
-    return;
-  }
-
   if(inputVal.includes('youtu.be/')){
     videoId=inputVal.split('youtu.be/')[1].split('?')[0];
   }else if(inputVal.includes('watch?v=')){
@@ -518,7 +492,7 @@ function loadYouTubeGeneral(){
   }
 
   if(videoId){
-    embedContainer.innerHTML=`<iframe src="https://www.youtube.com/embed/${videoId}" title="Video YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    iframeEl.src=`https://www.youtube.com/embed/${videoId}`;
     try{localStorage.setItem('yt_video_general',videoId);}catch(e){}
   }else{
     alert('No se pudo reconocer el enlace de YouTube. Probá copiando el enlace completo.');
@@ -530,7 +504,7 @@ window.addEventListener('DOMContentLoaded',()=>{
     const savedId=localStorage.getItem('yt_video_general');
     if(savedId){
       document.getElementById('input-general').value='https://youtu.be/'+savedId;
-      document.getElementById('embed-general').innerHTML=`<iframe src="https://www.youtube.com/embed/${savedId}" title="Video YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+      document.getElementById('yt-main-iframe').src=`https://www.youtube.com/embed/${savedId}`;
     }
   }catch(e){}
 });
