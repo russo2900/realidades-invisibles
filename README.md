@@ -68,10 +68,8 @@ table.help-table tr:last-child td{border-bottom:0}
 .unified-video-slot h2.yt-big-title{margin:0 0 10px;color:#fff;font-size:clamp(1.6rem,3.5vw,2.4rem);line-height:1.15;letter-spacing:-.01em}
 .unified-video-slot h2.yt-big-title span{color:var(--red)}
 .unified-video-slot p.yt-subtitle{margin:0 0 18px;color:var(--muted);font-size:1rem}
-.youtube-embed{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden;margin-bottom:16px;border:1px solid var(--line)}
+.youtube-embed{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
 .youtube-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
-.yt-input-group{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-.yt-input-group input{flex:1;min-width:240px;padding:12px 14px;background:#0b1017;border:1px solid #3a4657;border-radius:8px;color:#fff;font-size:.92rem}
 
 .uploadbox{background:linear-gradient(145deg,#171e29,#10151c);border:1px dashed #59677b;border-radius:16px;padding:28px}
 .uploadbox input{display:block;width:100%;margin:18px 0;color:var(--muted)}
@@ -159,18 +157,13 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
   </article>
 </div>
 
-<!-- ESPACIO ÚNICO PARA YOUTUBE CON TÍTULO EN GRANDE -->
+<!-- VIDEO FIJO DE YOUTUBE SIN CAJA DE TEXTO -->
 <div class="unified-video-slot" id="video-youtube">
   <h2 class="yt-big-title">VIDEO DE LAS ENTREVISTAS <span>EN YOUTUBE</span></h2>
   <p class="yt-subtitle">Mirá las respuestas y reflexiones de la comunidad frente a las cuatro preguntas del proyecto.</p>
 
-  <div class="youtube-embed" id="embed-general">
-    <iframe id="yt-main-iframe" src="https://www.youtube.com/embed/aaL339CLyVQ" title="Video de las entrevistas en YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </div>
-
-  <div class="yt-input-group">
-    <input type="text" id="input-general" placeholder="https://www.youtube.com/watch?v=aaL339CLyVQ">
-    <button class="btn sm" type="button" onclick="loadYouTubeGeneral()">Cargar link</button>
+  <div class="youtube-embed">
+    <iframe src="https://www.youtube.com/embed/aaL339CLyVQ" title="Video de las entrevistas en YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 </div>
 
@@ -346,53 +339,19 @@ async function render(){
 
 document.getElementById('publishBtn').addEventListener('click',async()=>{
   const file=document.getElementById('videoFile').files[0];
-  const title=document.getElementById('videoTitle').value.trim();
+  copyTitle = document.getElementById('videoTitle').value.trim();
   const status=document.getElementById('status');
   if(!file){status.textContent='Elegí un archivo de video primero.';return}
-  if(!title){status.textContent='Escribí un título para la entrevista.';return}
+  if(!copyTitle){status.textContent='Escribí un título para la entrevista.';return}
   if(!file.type.startsWith('video/')){status.textContent='El archivo seleccionado no parece un video.';return}
   status.textContent='Guardando video…';
   try{
-    await addVideo({title,blob:file,created:Date.now()});
+    await addVideo({title:copyTitle,blob:file,created:Date.now()});
     document.getElementById('videoTitle').value='';
     document.getElementById('videoFile').value='';
     status.textContent='Video agregado en este navegador.';
     await render();
   }catch(e){status.textContent='No se pudo guardar. Probá con un video más pequeño.';}
-});
-
-function loadYouTubeGeneral(){
-  const inputVal=document.getElementById('input-general').value.trim();
-  const iframeEl=document.getElementById('yt-main-iframe');
-  if(!inputVal) return;
-
-  let videoId='';
-  if(inputVal.includes('youtu.be/')){
-    videoId=inputVal.split('youtu.be/')[1].split('?')[0];
-  }else if(inputVal.includes('watch?v=')){
-    videoId=inputVal.split('watch?v=').pop().split('&')[0];
-  }else if(inputVal.includes('embed/')){
-    videoId=inputVal.split('embed/')[1].split('?')[0];
-  }else{
-    videoId=inputVal;
-  }
-
-  if(videoId){
-    iframeEl.src=`https://www.youtube.com/embed/${videoId}`;
-    try{localStorage.setItem('yt_video_general',videoId);}catch(e){}
-  }else{
-    alert('No se pudo reconocer el enlace de YouTube. Probá copiando el enlace completo.');
-  }
-}
-
-window.addEventListener('DOMContentLoaded',()=>{
-  try{
-    const savedId=localStorage.getItem('yt_video_general');
-    if(savedId){
-      document.getElementById('input-general').value='https://youtu.be/'+savedId;
-      document.getElementById('yt-main-iframe').src=`https://www.youtube.com/embed/${savedId}`;
-    }
-  }catch(e){}
 });
 
 document.getElementById('year').textContent=new Date().getFullYear();
