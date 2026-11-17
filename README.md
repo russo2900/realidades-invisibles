@@ -160,12 +160,12 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 </div>
 
 <!-- ESPACIO ÚNICO PARA YOUTUBE CON TÍTULO EN GRANDE -->
-<div class="https://www.youtube.com/watch?v=aaL339CLyVQ">
+<div class="unified-video-slot" id="video-youtube">
   <h2 class="yt-big-title">VIDEO DE LAS ENTREVISTAS <span>EN YOUTUBE</span></h2>
   <p class="yt-subtitle">Mirá las respuestas y reflexiones de la comunidad frente a las cuatro preguntas del proyecto.</p>
 
   <div class="youtube-embed" id="embed-general">
-    <iframe id="yt-main-iframe" src="https://www.youtube.com/watch?v=aaL339CLyVQ" title="Video de las entrevistas en YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe id="yt-main-iframe" src="https://www.youtube.com/embed/aaL339CLyVQ" title="Video de las entrevistas en YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 
   <div class="yt-input-group">
@@ -370,7 +370,7 @@ function loadYouTubeGeneral(){
   if(inputVal.includes('youtu.be/')){
     videoId=inputVal.split('youtu.be/')[1].split('?')[0];
   }else if(inputVal.includes('watch?v=')){
-    videoId=inputVal.split('watch?v=')[1].split('&')[0];
+    videoId=inputVal.split('watch?v=').pop().split('&')[0];
   }else if(inputVal.includes('embed/')){
     videoId=inputVal.split('embed/')[1].split('?')[0];
   }else{
