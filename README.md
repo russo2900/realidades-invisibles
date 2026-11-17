@@ -165,11 +165,11 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
   <p class="yt-subtitle">Mirá las respuestas y reflexiones de la comunidad frente a las cuatro preguntas del proyecto.</p>
 
   <div class="youtube-embed" id="embed-general">
-    <iframe id="yt-main-iframe" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video de las entrevistas en YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe id="yt-main-iframe" src="https://www.youtube.com/watch?v=aaL339CLyVQ" title="Video de las entrevistas en YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 
   <div class="yt-input-group">
-    <input type="text" id="input-general" placeholder="O pegá acá el link de YouTube (Ej: https://youtu.be/...) para probarlo ahora">
+    <input type="text" id="input-general" placeholder="https://www.youtube.com/watch?v=aaL339CLyVQ">
     <button class="btn sm" type="button" onclick="loadYouTubeGeneral()">Cargar link</button>
   </div>
 </div>
