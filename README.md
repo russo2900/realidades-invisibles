@@ -1,1 +1,542 @@
-# realidades-invisibles
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Realidades Invisibles: prevención y conciencia sobre el consumo problemático de drogas.">
+<title>Realidades Invisibles · Proyecto Escolar</title>
+<style>
+:root{--bg:#090b0f;--panel:#121720;--panel2:#181f2a;--text:#f4f6fa;--muted:#a7b0bf;--red:#ed3948;--line:#293241}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#090b0f;color:#f4f6fa;font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:rgba(9,11,15,.95);border-bottom:1px solid var(--line)}
+nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-weight:900;letter-spacing:.08em}
+.brand span{color:var(--red)}
+.navlinks{display:flex;gap:18px;color:var(--muted);font-size:.9rem}
+.navlinks a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:9px;padding:12px 18px;background:var(--red);color:#fff;font-weight:750;cursor:pointer}
+.btn:hover{filter:brightness(1.1)}
+.btn.secondary{background:#252e3b;border:1px solid #3a4657}
+.btn.sm{padding:10px 16px;font-size:.88rem}
+
+/* Hero con foto al costado */
+.hero{padding:62px 0;background:radial-gradient(ellipse at 80% 20%,#4b1820 0,transparent 40%),linear-gradient(130deg,#10151d,#090b0f 70%);border-bottom:1px solid var(--line)}
+.hero-content{display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.hero-text{flex:1;min-width:300px}
+.eyebrow{color:#ff7781;font-weight:800;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase}
+.hero h1{font-size:clamp(2.2rem,6vw,4.6rem);line-height:.98;max-width:850px;margin:18px 0}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero p{max-width:650px;color:var(--muted);font-size:1.1rem}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.hero-aside{flex:0 0 320px;max-width:100%}
+.hero-aside .campaign-poster{width:100%;border-radius:14px;border:1px solid var(--line);box-shadow:0 12px 30px rgba(0,0,0,.5);display:block}
+
+.section{padding:62px 0}
+.section h2{font-size:clamp(1.7rem,4vw,2.5rem);margin:0 0 8px}
+.lead{color:var(--muted);margin:0 0 28px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card .q-num{display:inline-block;color:var(--red);font-weight:900;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.card p{margin:0;color:var(--muted)}
+
+/* Bloques del Marco Teórico con fotos intercaladas */
+.theory-container{display:grid;grid-template-columns:1fr;gap:24px;margin-top:20px}
+.theory-box{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px}
+.theory-box h3{color:var(--red);margin-top:0;font-size:1.25rem}
+.theory-box p,.theory-box li{color:var(--muted);line-height:1.6}
+.theory-box ul{margin:10px 0 0 20px;padding:0}
+.theory-split{display:flex;gap:26px;align-items:center;flex-wrap:wrap}
+.theory-split-text{flex:1;min-width:280px}
+.theory-split-media{flex:0 0 320px;max-width:100%}
+.theory-split-media img{width:100%;border-radius:10px;border:1px solid var(--line);display:block;background:#000}
+.theory-media-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
+.theory-media-grid figure{margin:0;background:#0c1017;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.theory-media-grid img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
+.theory-media-grid figcaption{padding:10px 12px;font-size:.82rem;color:var(--muted)}
+
+/* Tabla de Lugares de Ayuda */
+.table-wrap{width:100%;overflow-x:auto;margin-top:20px}
+table.help-table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+table.help-table th,table.help-table td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);font-size:.92rem}
+table.help-table th{background:var(--panel2);color:#fff;font-weight:700}
+table.help-table td{color:var(--muted)}
+table.help-table tr:last-child td{border-bottom:0}
+
+/* Ley propuesta */
+.law-box{background:linear-gradient(145deg,#151a24,#0e1219);border:1px solid #3a4657;border-left:4px solid var(--red);border-radius:12px;padding:30px;margin-top:25px}
+.law-box h3{color:#fff;margin-top:0}
+.law-box h4{color:var(--red);margin:20px 0 8px;font-size:1.05rem}
+
+/* Índice y bloque destacado de YouTube */
+.q-index{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:28px}
+.q-index-title{font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin:0 0 12px}
+.q-index-list{display:flex;flex-wrap:wrap;gap:10px}
+.q-index-list a{background:var(--panel);border:1px solid var(--line);padding:8px 14px;border-radius:8px;font-size:.9rem;font-weight:600}
+.q-index-list a:hover{border-color:var(--red);color:#fff;background:#1e161d}
+.q-index-list a span{color:var(--red);font-weight:900;margin-right:6px}
+.q-card{scroll-margin-top:92px}
+
+.unified-video-slot{margin-top:36px;background:var(--panel);border:2px solid var(--red);border-radius:16px;padding:28px;box-shadow:0 14px 34px rgba(237,57,72,.12)}
+.unified-video-slot h2.yt-big-title{margin:0 0 10px;color:#fff;font-size:clamp(1.6rem,3.5vw,2.4rem);line-height:1.15;letter-spacing:-.01em}
+.unified-video-slot h2.yt-big-title span{color:var(--red)}
+.unified-video-slot p.yt-subtitle{margin:0 0 18px;color:var(--muted);font-size:1rem}
+.youtube-embed{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden;margin-bottom:16px;border:1px solid var(--line)}
+.youtube-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+.yt-input-group{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.yt-input-group input{flex:1;min-width:240px;padding:12px 14px;background:#0b1017;border:1px solid #3a4657;border-radius:8px;color:#fff;font-size:.92rem}
+
+/* Galería de afiches */
+.campaign-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:28px}
+.campaign-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.campaign-card img{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#000}
+.campaign-card.landscape img{aspect-ratio:16/9;object-fit:cover}
+.campaign-info{padding:16px;font-size:.9rem;color:var(--muted)}
+
+.uploadbox{background:linear-gradient(145deg,#171e29,#10151c);border:1px dashed #59677b;border-radius:16px;padding:28px}
+.uploadbox input{display:block;width:100%;margin:18px 0;color:var(--muted)}
+.hint{font-size:.88rem;color:var(--muted)}
+.status{min-height:24px;color:#ff9ba2}
+.video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.video-card{overflow:hidden;background:var(--panel);border:1px solid var(--line);border-radius:14px}
+.video-card video{width:100%;aspect-ratio:16/9;background:#000;display:block}
+.video-info{padding:15px}
+.video-info h3{margin:0 0 5px;font-size:1rem}
+.video-info p{margin:0;color:var(--muted);font-size:.86rem}
+.empty{border:1px solid var(--line);border-radius:14px;padding:28px;color:var(--muted);text-align:center;background:var(--panel)}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.88rem}
+.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:760px){.navlinks{display:none}.grid-2,.video-grid{grid-template-columns:1fr}.hero{padding:40px 0}.hero-content,.theory-split{flex-direction:column;align-items:stretch}.hero-aside{order:-1;margin-bottom:20px}.section{padding:46px 0}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap"><nav>
+<a class="brand" href="#">REALIDADES <span>INVISIBLES</span></a>
+<div class="navlinks">
+  <a href="#preguntas">Preguntas &amp; Video</a>
+  <a href="#teoria">Teoría</a>
+  <a href="#entrevistas">Entrevistas</a>
+  <a href="#campana">Campaña</a>
+  <a href="#ley">Proyecto de Ley</a>
+</div>
+<a class="btn" href="#video-youtube">Ver video</a>
+</nav></div></header>
+
+<main>
+<section class="hero"><div class="wrap"><div class="hero-content">
+  <div class="hero-text">
+    <div class="eyebrow">Trabajo Práctico Grupal · Secundario de Adultos</div>
+    <h1>REALIDADES<br><em>INVISIBLES.</em></h1>
+    <p>Una problemática social y de salud pública. Encuesta comunitaria, marco teórico, afiches de prevención y propuesta de Proyecto de Ley.</p>
+    <div class="actions"><a class="btn" href="#video-youtube">▶ Ver video de preguntas</a><a class="btn secondary" href="#teoria">Leer marco teórico</a></div>
+  </div>
+  <!-- Foto al costado del título -->
+  <div class="hero-aside">
+    <img src="d30179d4-71d6-4574-9e68-a01312ec76ab.jpg" alt="Afiche Las Drogas El Abismo de tu Vida" class="campaign-poster">
+  </div>
+</div></div></section>
+
+<!-- 1. PRIMERO DE TODO: PREGUNTAS Y VIDEO DE YOUTUBE -->
+<section class="section" id="preguntas" style="background:var(--panel2);border-bottom:1px solid var(--line);"><div class="wrap">
+<h2>Preguntas para encontrar una solución</h2>
+<p class="lead">Elegí un eje en el índice para ir directo a la pregunta. Abajo encontrás el video completo con las entrevistas en YouTube.</p>
+
+<nav class="q-index" aria-label="Índice de preguntas">
+  <div class="q-index-title">Índice rápido de preguntas</div>
+  <div class="q-index-list">
+    <a href="#pregunta-1"><span>01</span> Prevención en la escuela</a>
+    <a href="#pregunta-2"><span>02</span> Diálogo en la familia</a>
+    <a href="#pregunta-3"><span>03</span> Estado y salud mental</a>
+    <a href="#pregunta-4"><span>04</span> Prejuicios y salud</a>
+  </div>
+</nav>
+
+<div class="grid-2">
+  <article class="card q-card" id="pregunta-1">
+    <div>
+      <span class="q-num">Pregunta 01 · Escuela</span>
+      <p>¿Qué charlas o información creés que faltan en la escuela para que los jóvenes entiendan los riesgos de empezar a consumir a una edad temprana?</p>
+    </div>
+  </article>
+
+  <article class="card q-card" id="pregunta-2">
+    <div>
+      <span class="q-num">Pregunta 02 · Familia</span>
+      <p>¿Qué harías en tu casa o familia para mejorar el diálogo y evitar que los chicos o adolescentes busquen refugio en las sustancias?</p>
+    </div>
+  </article>
+
+  <article class="card q-card" id="pregunta-3">
+    <div>
+      <span class="q-num">Pregunta 03 · Estado y comunidad</span>
+      <p>Sabiendo que el Estado muchas veces no invierte ni cuida lo suficiente la salud mental, ¿qué le exigirías al gobierno o qué solución propondrías en tu comunidad?</p>
+    </div>
+  </article>
+
+  <article class="card q-card" id="pregunta-4">
+    <div>
+      <span class="q-num">Pregunta 04 · Prejuicios y salud</span>
+      <p>Muchas veces se juzga a las personas adictas creyendo que es "falta de voluntad", ¿qué harías para cambiar esos prejuicios y lograr que se vea como un problema de salud que necesita ayuda?</p>
+    </div>
+  </article>
+</div>
+
+<!-- ESPACIO ÚNICO PARA YOUTUBE CON TÍTULO EN GRANDE -->
+<div class="unified-video-slot" id="video-youtube">
+  <h2 class="yt-big-title">VIDEO DE LAS ENTREVISTAS <span>EN YOUTUBE</span></h2>
+  <p class="yt-subtitle">Mirá las respuestas y reflexiones de la comunidad frente a las cuatro preguntas del proyecto.</p>
+
+  <div class="youtube-embed" id="embed-general">
+    <!-- ===================================================================== -->
+    <!-- ACÁ PODÉS PEGAR DIRECTAMENTE TU LINK DE YOUTUBE EN EL CÓDIGO:         -->
+    <!-- Reemplazá TU_ID_DE_YOUTUBE en src="https://www.youtube.com/embed/..." -->
+    <!-- Ejemplo: si tu link es https://youtu.be/dQw4w9WgXcQ                   -->
+    <!-- poné: src="https://www.youtube.com/embed/dQw4w9WgXcQ"                 -->
+    <!-- ===================================================================== -->
+    <iframe id="yt-main-iframe" src="https://www.youtube.com/embed/TU_ID_DE_YOUTUBE" title="Video de las entrevistas en YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="yt-input-group">
+    <input type="text" id="input-general" placeholder="O pegá acá el link de YouTube (Ej: https://youtu.be/...) para probarlo ahora">
+    <button class="btn sm" type="button" onclick="loadYouTubeGeneral()">Cargar link</button>
+  </div>
+</div>
+
+</div></section>
+
+<!-- 2. MARCO TEÓRICO CON FOTOS INTERCALADAS -->
+<section class="section" id="teoria"><div class="wrap">
+<h2>Marco Teórico y Conceptual</h2>
+<p class="lead">Comprender la problemática desde una perspectiva social, humana y de salud pública, evitando prejuicios y estigmas.</p>
+
+<div class="theory-container">
+  <!-- Punto 1 + foto 1000354085.jpg -->
+  <div class="theory-box">
+    <div class="theory-split">
+      <div class="theory-split-text">
+        <h3>1. ¿Qué son las drogas y cómo actúan en el organismo?</h3>
+        <p>Son sustancias químicas o naturales que, al ingresar al cuerpo por diversas vías (inhalada, absorbida, inyectada, oral o fumada), alteran el funcionamiento normal del sistema nervioso central y del cerebro.</p>
+        <p><strong>Clasificación según su marco legal y uso clínico:</strong></p>
+        <ul>
+          <li><strong>Drogas legales:</strong> Alcohol, tabaco y cafeína. Permitidas por ley pero de alto riesgo de dependencia con el uso abusivo o prolongado.</li>
+          <li><strong>Drogas ilegales:</strong> Estimulantes ilícitos, opioides no autorizados y compuestos alucinógenos prohibidos por su alto poder adictivo.</li>
+          <li><strong>Fármacos de prescripción:</strong> Medicamentos controlados (ansiolíticos, analgésicos opioides) cuyo uso sin supervisión médica constituye abuso de sustancias.</li>
+        </ul>
+        <p style="margin-top:14px;"><strong>Acción en el organismo:</strong> Modifican la comunicación neuronal y la liberación de neurotransmisores como la dopamina (estimulantes, depresores o alucinógenos).</p>
+      </div>
+      <div class="theory-split-media">
+        <img src="1000354085.jpg" alt="Sustancias e insumos asociados al consumo" loading="lazy">
+      </div>
+    </div>
+  </div>
+
+  <!-- Punto 2 + foto 1000354092.jpg -->
+  <div class="theory-box">
+    <div class="theory-split">
+      <div class="theory-split-text">
+        <h3>2. Factores de riesgo de la drogadicción</h3>
+        <p>No responde a una sola causa ni a una falta de fuerza de voluntad, sino a múltiples factores interactivos:</p>
+        <ul>
+          <li><strong>Biológicos y genéticos:</strong> Predisposición familiar y edad de inicio temprana (durante la infancia o adolescencia con cerebro en desarrollo).</li>
+          <li><strong>Psicológicos:</strong> Trastornos de salud mental (depresión, ansiedad, TDAH) y dificultad en la regulación emocional o tolerancia a la frustración.</li>
+          <li><strong>Sociales y ambientales:</strong> Entornos familiares disfuncionales, presión de grupo, normalización del consumo y accesibilidad a las sustancias.</li>
+        </ul>
+      </div>
+      <div class="theory-split-media">
+        <img src="1000354092.jpg" alt="Afiche Las drogas destruyen vidas" loading="lazy">
+      </div>
+    </div>
+  </div>
+
+  <!-- Punto 3 + foto 1000354087.jpg -->
+  <div class="theory-box">
+    <div class="theory-split">
+      <div class="theory-split-text">
+        <h3>3. Síntomas y signos de la adicción</h3>
+        <ul>
+          <li>Compulsión por el consumo y pérdida de control sobre la cantidad o frecuencia.</li>
+          <li>Desarrollo de tolerancia (necesidad de mayor dosis) y síndrome de abstinencia al interrumpir el uso.</li>
+          <li>Preocupación excesiva, abandono de responsabilidades escolares/laborales/familiares y aislamiento social.</li>
+          <li>Conductas de riesgo y persistencia a pesar del daño físico, psicológico o económico evidente.</li>
+        </ul>
+      </div>
+      <div class="theory-split-media">
+        <img src="1000354087.jpg" alt="Riesgo letal de pastillas y sustancias" loading="lazy">
+      </div>
+    </div>
+  </div>
+
+  <!-- Punto 4 + galería de impacto físico (1000354088.jpg, 1000354086.jpg, 1000354090.jpg, 1000354089.jpg) -->
+  <div class="theory-box">
+    <h3>4. Consecuencias en la salud física, mental y cognitiva</h3>
+    <ul>
+      <li><strong>Salud física:</strong> Alteración neuronal crónica, hipertensión, arritmias, infartos, daño hepático severo (cirrosis) e infecciones graves por uso compartido de jeringas (VIH, Hepatitis B y C).</li>
+      <li><strong>Salud mental y cognitiva:</strong> Cuadros depresivos, ataques de pánico, psicosis, deterioro cognitivo, pérdida de memoria, desregulación emocional y anhedonia (incapacidad para sentir placer).</li>
+    </ul>
+    <div class="theory-media-grid">
+      <figure>
+        <img src="1000354088.jpg" alt="Pulmón sano vs pulmón con drogas" loading="lazy">
+        <figcaption><strong>Salud respiratoria:</strong> Pulmón sano vs. pulmón dañado.</figcaption>
+      </figure>
+      <figure>
+        <img src="1000354086.jpg" alt="Cerebro sano vs cerebro con drogas" loading="lazy">
+        <figcaption><strong>Salud neurológica:</strong> Cerebro sano vs. cerebro afectado.</figcaption>
+      </figure>
+      <figure>
+        <img src="1000354090.jpg" alt="Deterioro dental por consumo" loading="lazy">
+        <figcaption><strong>Deterioro bucal:</strong> Daño dental severo.</figcaption>
+      </figure>
+      <figure>
+        <img src="1000354089.jpg" alt="Infecciones y marcas por inyección" loading="lazy">
+        <figcaption><strong>Riesgo infeccioso:</strong> Lesiones cutáneas y transmisión sanguínea.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- Punto 5 + foto 1000354093.jpg -->
+  <div class="theory-box">
+    <div class="theory-split">
+      <div class="theory-split-text">
+        <h3>5. Tratamiento multidisciplinario</h3>
+        <p>Requiere un abordaje personalizado que incluye desintoxicación médica supervisada, intervención farmacológica (para patología dual), psicoterapia especializada (TCC), grupos de apoyo, reinserción social y acompañamiento terapéutico cotidiano.</p>
+      </div>
+      <div class="theory-split-media">
+        <img src="1000354093.jpg" alt="Afiche Las adicciones te roban todo" loading="lazy">
+      </div>
+    </div>
+  </div>
+
+  <!-- Punto 6 -->
+  <div class="theory-box">
+    <h3>6. Lugares donde se puede pedir ayuda</h3>
+    <div class="table-wrap">
+      <table class="help-table">
+        <thead>
+          <tr><th>Institución / Servicio</th><th>Modalidad de atención y contacto</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>SEDRONAR (Línea 141)</strong></td><td>Disponible las 24 horas para orientación y contención gratuita a nivel nacional.</td></tr>
+          <tr><td><strong>Línea 108, Opción 3</strong></td><td>Atención y orientación en adicciones en la Ciudad de Buenos Aires.</td></tr>
+          <tr><td><strong>Hospital Fernández</strong></td><td>Atención en su División de Toxicología (las 24 hs).</td></tr>
+          <tr><td><strong>Hospitales Públicos</strong></td><td>Cuentan con servicios de salud mental y evaluación profesional.</td></tr>
+          <tr><td><strong>Centro de Salud Mental Municipal (Ituzaingó)</strong></td><td>Dirección: Bernal 1508, esq. La Piedad. Atención psicológica y consumos problemáticos. Tel: 2120-1941.</td></tr>
+          <tr><td><strong>Centro de Salud Mental (Ituzaingó)</strong></td><td>Dirección: Mansilla 1483.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div></section>
+
+<!-- 3. ENTREVISTAS -->
+<section class="section" id="entrevistas" style="background:var(--panel2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);"><div class="wrap">
+<h2>Entrevistas en la calle</h2><p class="lead">Opiniones y conversaciones recolectadas para informar sin juzgar.</p>
+<div id="videoList" class="video-grid"><div class="empty" style="grid-column:1/-1">Todavía no hay videos generales publicados en este dispositivo. ¡Pronto vas a encontrar nuestras entrevistas acá!</div></div>
+</div></section>
+
+<!-- 4. CAMPAÑA VISUAL COMPLETA -->
+<section class="section" id="campana"><div class="wrap">
+<h2>Campaña Visual y Afiches Escolares</h2>
+<p class="lead">Material gráfico oficial de prevención y concientización contra el consumo problemático.</p>
+
+<div class="campaign-grid">
+  <article class="campaign-card">
+    <img src="1000354092.jpg" alt="Afiche Las drogas destruyen vidas" loading="lazy">
+    <div class="campaign-info"><strong>Campaña Escolar:</strong> Las drogas destruyen vidas. #PrevenciónEscolar</div>
+  </article>
+  <article class="campaign-card">
+    <img src="1000354093.jpg" alt="Afiche Las adicciones te roban todo" loading="lazy">
+    <div class="campaign-info"><strong>Campaña Escolar:</strong> Las adicciones te roban todo.</div>
+  </article>
+  <article class="campaign-card">
+    <img src="1000354091.jpg" alt="Afiche El abismo de tu vida" loading="lazy">
+    <div class="campaign-info"><strong>Afiche de Concientización:</strong> El abismo de tu vida.</div>
+  </article>
+  <article class="campaign-card">
+    <img src="d30179d4-71d6-4574-9e68-a01312ec76ab.jpg" alt="Afiche Las drogas el abismo de tu vida" loading="lazy">
+    <div class="campaign-info"><strong>Afiche Principal:</strong> ¡Di no! Es el fin de todo.</div>
+  </article>
+  <article class="campaign-card landscape">
+    <img src="1000354089.jpg" alt="Daños físicos" loading="lazy">
+    <div class="campaign-info"><strong>Impacto físico:</strong> Deterioro y lesiones en la salud.</div>
+  </article>
+  <article class="campaign-card landscape">
+    <img src="1000354088.jpg" alt="Pulmón sano vs con drogas" loading="lazy">
+    <div class="campaign-info"><strong>Salud respiratoria:</strong> Comparativa de daños pulmonares.</div>
+  </article>
+  <article class="campaign-card landscape">
+    <img src="1000354085.jpg" alt="Sustancias" loading="lazy">
+    <div class="campaign-info"><strong>Factores de riesgo:</strong> Insumos y sustancias asociadas.</div>
+  </article>
+  <article class="campaign-card landscape">
+    <img src="1000354087.jpg" alt="Riesgo letal" loading="lazy">
+    <div class="campaign-info"><strong>Riesgo crítico:</strong> Fármacos y peligro letal.</div>
+  </article>
+  <article class="campaign-card landscape">
+    <img src="1000354086.jpg" alt="Cerebro" loading="lazy">
+    <div class="campaign-info"><strong>Salud neurológica:</strong> Daño cerebral comparativo.</div>
+  </article>
+  <article class="campaign-card landscape">
+    <img src="1000354090.jpg" alt="Deterioro dental" loading="lazy">
+    <div class="campaign-info"><strong>Consecuencias físicas:</strong> Daño dental severo.</div>
+  </article>
+</div>
+</div></section>
+
+<!-- 5. PROYECTO DE LEY -->
+<section class="section" id="ley" style="background:var(--panel2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);"><div class="wrap">
+<h2>Propuesta Legislativa Grupal</h2>
+<p class="lead">Nuestra iniciativa para debatir y transformar la realidad desde las leyes y la comunidad.</p>
+
+<div class="law-box">
+  <h3>Proyecto de Ley: "Prevención integral, acompañamiento temprano y protección judicial frente a los consumos problemáticos"</h3>
+  
+  <h4>Fundamentación (Estudiantes de Secundario de Adultos):</h4>
+  <p>Como estudiantes de un secundario de adultos, observamos con profunda preocupación cómo el consumo problemático avanza cada día más rápido y a edades más tempranas, destruyendo la salud física y mental y la paz de las familias. La drogadicción no es una simple "falta de voluntad", sino una problemática compleja. Por eso exigimos al Estado atacar el problema desde dos frentes: prevención real y cercana (en escuelas, hogares y redes sociales) y una justicia firme que corte la venta y proteja a los menores.</p>
+
+  <h4>Texto del Proyecto</h4>
+  <p><strong>Artículo 1° — Objeto de la Ley:</strong> Garantizar la protección integral de niños, niñas y adolescentes frente al consumo problemático de sustancias mediante políticas obligatorias de prevención temprana, acompañamiento, difusión masiva y endurecimiento de procesos judiciales contra el narcotráfico a baja y gran escala.</p>
+  
+  <p><strong>Artículo 2° — Prevención y Acompañamiento Obligatorio:</strong> Establecer talleres permanentes de prevención y educación emocional en escuelas primarias y secundarias. Contar con equipos interdisciplinarios (psicólogos y trabajadores sociales) para detectar señales de alerta sin estigmas.</p>
+
+  <p><strong>Artículo 3° — Campañas de Información:</strong> Garantizar campañas obligatorias de alto impacto en redes sociales, medios de comunicación, cartelería en espacios públicos y guías enviadas a los hogares difundiendo los riesgos y canales gratuitos como la Línea 141 de SEDRONAR.</p>
+
+  <p><strong>Artículo 4° — Espacios Comunitarios de Salud Mental:</strong> Creación y financiamiento efectivo de centros barriales de escucha, contención y actividades recreativas y deportivas gratuitas sin listas de espera.</p>
+
+  <p><strong>Artículo 5° — Acción Judicial Rápida y Castigo a la Venta:</strong> Penas efectivas e inexcarcelables para quienes vendan o distribuyan sustancias ilícitas a menos de 500 metros de escuelas, clubes o plazas, y creación de fiscalías especializadas para denuncias anónimas de "búnkeres".</p>
+
+  <p><strong>Artículo 6° — De forma:</strong> Comuníquese al Poder Ejecutivo para su reglamentación y asignación presupuestaria.</p>
+</div>
+</div></section>
+
+<!-- PANEL DE CARGA GENERAL -->
+<section class="section" id="publicar"><div class="wrap">
+<h2>Panel de carga de videos generales</h2><p class="lead">Seleccioná un archivo de video desde tu dispositivo para agregarlo a la galería de entrevistas.</p>
+<div class="uploadbox">
+<label for="videoTitle"><strong>Título de la entrevista</strong></label>
+<input id="videoTitle" type="text" placeholder="Ej.: ¿Qué sabe la gente sobre las adicciones?" style="width:100%;padding:12px;border-radius:8px;border:1px solid #3a4657;background:#0b1017;color:white;margin:8px 0 16px">
+<label for="videoFile"><strong>Archivo de video</strong></label>
+<input id="videoFile" type="file" accept="video/*">
+<button class="btn" id="publishBtn" type="button">Agregar video</button>
+<p class="status" id="status" role="status" aria-live="polite"></p>
+<p class="hint">Prototipo local: los videos se guardan en este navegador y no se suben a internet ni aparecen en otros celulares.</p>
+</div>
+</div></section>
+</main>
+
+<footer><div class="wrap foot"><span>© <span id="year"></span> Realidades Invisibles · Proyecto escolar</span><span>Informar con respeto también es prevenir.</span></div></footer>
+
+<script>
+const DB_NAME='realidades-invisibles', STORE='videos';
+const openDB=()=>new Promise((resolve,reject)=>{
+  const r=indexedDB.open(DB_NAME,1);
+  r.onupgradeneeded=()=>r.result.createObjectStore(STORE,{keyPath:'id',autoIncrement:true});
+  r.onsuccess=()=>resolve(r.result);
+  r.onerror=()=>reject(r.error);
+});
+
+async function allVideos(){
+  try{
+    const db=await openDB();
+    return new Promise((res,rej)=>{
+      const r=db.transaction(STORE).objectStore(STORE).getAll();
+      r.onsuccess=()=>res(r.result);
+      r.onerror=()=>rej(r.error);
+    });
+  }catch(e){return [];}
+}
+
+async function addVideo(item){
+  const db=await openDB();
+  return new Promise((res,rej)=>{
+    const r=db.transaction(STORE,'readwrite').objectStore(STORE).add(item);
+    r.onsuccess=()=>res(r.result);
+    r.onerror=()=>rej(r.error);
+  });
+}
+
+async function render(){
+  const root=document.getElementById('videoList');
+  const items=await allVideos();
+  root.innerHTML='';
+  if(!items.length){
+    root.innerHTML='<div class="empty" style="grid-column:1/-1">Todavía no hay videos generales publicados en este dispositivo. ¡Pronto vas a encontrar nuestras entrevistas acá!</div>';
+    return;
+  }
+  items.sort((a,b)=>b.created-a.created).forEach(item=>{
+    const card=document.createElement('article');card.className='video-card';
+    const video=document.createElement('video');video.controls=true;video.preload='metadata';video.src=URL.createObjectURL(item.blob);
+    const info=document.createElement('div');info.className='video-info';
+    const title=document.createElement('h3');title.textContent=item.title;
+    const date=document.createElement('p');date.textContent=new Date(item.created).toLocaleDateString('es-AR');
+    info.append(title,date);card.append(video,info);root.append(card);
+  });
+}
+
+document.getElementById('publishBtn').addEventListener('click',async()=>{
+  const file=document.getElementById('videoFile').files[0];
+  const title=document.getElementById('videoTitle').value.trim();
+  const status=document.getElementById('status');
+  if(!file){status.textContent='Elegí un archivo de video primero.';return}
+  if(!title){status.textContent='Escribí un título para la entrevista.';return}
+  if(!file.type.startsWith('video/')){status.textContent='El archivo seleccionado no parece un video.';return}
+  status.textContent='Guardando video…';
+  try{
+    await addVideo({title,blob:file,created:Date.now()});
+    document.getElementById('videoTitle').value='';
+    document.getElementById('videoFile').value='';
+    status.textContent='Video agregado en este navegador.';
+    await render();
+  }catch(e){status.textContent='No se pudo guardar. Probá con un video más pequeño.';}
+});
+
+function loadYouTubeGeneral(){
+  const inputVal=document.getElementById('input-general').value.trim();
+  const embedContainer=document.getElementById('embed-general');
+  if(!inputVal) return;
+
+  let videoId='';
+  if(inputVal.includes('<iframe')){
+    embedContainer.innerHTML=inputVal;
+    const iframe=embedContainer.querySelector('iframe');
+    if(iframe){iframe.style.width='100%';iframe.style.height='100%';iframe.style.border='0';}
+    return;
+  }
+
+  if(inputVal.includes('youtu.be/')){
+    videoId=inputVal.split('youtu.be/')[1].split('?')[0];
+  }else if(inputVal.includes('watch?v=')){
+    videoId=inputVal.split('watch?v=')[1].split('&')[0];
+  }else if(inputVal.includes('embed/')){
+    videoId=inputVal.split('embed/')[1].split('?')[0];
+  }else{
+    videoId=inputVal;
+  }
+
+  if(videoId){
+    embedContainer.innerHTML=`<iframe src="https://www.youtube.com/embed/${videoId}" title="Video YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    try{localStorage.setItem('yt_video_general',videoId);}catch(e){}
+  }else{
+    alert('No se pudo reconocer el enlace de YouTube. Probá copiando el enlace completo.');
+  }
+}
+
+window.addEventListener('DOMContentLoaded',()=>{
+  try{
+    const savedId=localStorage.getItem('yt_video_general');
+    if(savedId){
+      document.getElementById('input-general').value='https://youtu.be/'+savedId;
+      document.getElementById('embed-general').innerHTML=`<iframe src="https://www.youtube.com/embed/${savedId}" title="Video YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    }
+  }catch(e){}
+});
+
+document.getElementById('year').textContent=new Date().getFullYear();
+render();
+</script>
+</body>
+</html>
