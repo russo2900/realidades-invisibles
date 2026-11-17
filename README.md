@@ -1,4 +1,4 @@
-
+<!doctype html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
@@ -21,7 +21,6 @@ nav{height:72px;display:flex;align-items:center;justify-content:space-between;ga
 .btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:9px;padding:12px 18px;background:var(--red);color:#fff;font-weight:750;cursor:pointer}
 .btn:hover{filter:brightness(1.1)}
 .btn.secondary{background:#252e3b;border:1px solid #3a4657}
-.btn.sm{padding:10px 16px;font-size:.88rem}
 
 .hero{padding:62px 0;background:radial-gradient(ellipse at 80% 20%,#4b1820 0,transparent 40%),linear-gradient(130deg,#10151d,#090b0f 70%);border-bottom:1px solid var(--line)}
 .hero-content{text-align:center;max-width:850px;margin:0 auto}
@@ -71,21 +70,9 @@ table.help-table tr:last-child td{border-bottom:0}
 .youtube-embed{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
 .youtube-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
 
-.uploadbox{background:linear-gradient(145deg,#171e29,#10151c);border:1px dashed #59677b;border-radius:16px;padding:28px}
-.uploadbox input{display:block;width:100%;margin:18px 0;color:var(--muted)}
-.hint{font-size:.88rem;color:var(--muted)}
-.status{min-height:24px;color:#ff9ba2}
-.video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.video-card{overflow:hidden;background:var(--panel);border:1px solid var(--line);border-radius:14px}
-.video-card video{width:100%;aspect-ratio:16/9;background:#000;display:block}
-.video-info{padding:15px}
-.video-info h3{margin:0 0 5px;font-size:1rem}
-.video-info p{margin:0;color:var(--muted);font-size:.86rem}
-.empty{border:1px solid var(--line);border-radius:14px;padding:28px;color:var(--muted);text-align:center;background:var(--panel)}
-
-footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.88rem}
-.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-@media(max-width:760px){.navlinks{display:none}.grid-2,.video-grid{grid-template-columns:1fr}.hero{padding:40px 0}.section{padding:46px 0}}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.88rem;background:var(--panel2)}
+.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;text-align:center}
+@media(max-width:760px){.navlinks{display:none}.grid-2{grid-template-columns:1fr}.hero{padding:40px 0}.section{padding:46px 0}.foot{flex-direction:column;align-items:center}}
 </style>
 </head>
 <body>
@@ -95,7 +82,6 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 <div class="navlinks">
   <a href="#preguntas">Preguntas &amp; Video</a>
   <a href="#teoria">Teoría</a>
-  <a href="#entrevistas">Entrevistas</a>
   <a href="#ley">Proyecto de Ley</a>
 </div>
 <a class="btn" href="#video-youtube">Ver video</a>
@@ -157,7 +143,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
   </article>
 </div>
 
-<!-- VIDEO FIJO DE YOUTUBE SIN CAJA DE TEXTO -->
+<!-- VIDEO FIJO DE YOUTUBE -->
 <div class="unified-video-slot" id="video-youtube">
   <h2 class="yt-big-title">VIDEO DE LAS ENTREVISTAS <span>EN YOUTUBE</span></h2>
   <p class="yt-subtitle">Mirá las respuestas y reflexiones de la comunidad frente a las cuatro preguntas del proyecto.</p>
@@ -241,14 +227,8 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 </div>
 </div></section>
 
-<!-- 3. ENTREVISTAS -->
-<section class="section" id="entrevistas" style="background:var(--panel2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);"><div class="wrap">
-<h2>Entrevistas en la calle</h2><p class="lead">Opiniones y conversaciones recolectadas para informar sin juzgar.</p>
-<div id="videoList" class="video-grid"><div class="empty" style="grid-column:1/-1">Todavía no hay videos generales publicados en este dispositivo. ¡Pronto vas a encontrar nuestras entrevistas acá!</div></div>
-</div></section>
-
-<!-- 4. PROYECTO DE LEY -->
-<section class="section" id="ley"><div class="wrap">
+<!-- 3. PROYECTO DE LEY -->
+<section class="section" id="ley" style="background:var(--panel2);border-top:1px solid var(--line);"><div class="wrap">
 <h2>Propuesta Legislativa Grupal</h2>
 <p class="lead">Nuestra iniciativa para debatir y transformar la realidad desde las leyes y la comunidad.</p>
 
@@ -273,89 +253,15 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 </div>
 </div></section>
 
-<!-- PANEL DE CARGA GENERAL -->
-<section class="section" id="publicar" style="background:var(--panel2);border-top:1px solid var(--line);"><div class="wrap">
-<h2>Panel de carga de videos generales</h2><p class="lead">Seleccioná un archivo de video desde tu dispositivo para agregarlo a la galería de entrevistas.</p>
-<div class="uploadbox">
-<label for="videoTitle"><strong>Título de la entrevista</strong></label>
-<input id="videoTitle" type="text" placeholder="Ej.: ¿Qué sabe la gente sobre las adicciones?" style="width:100%;padding:12px;border-radius:8px;border:1px solid #3a4657;background:#0b1017;color:white;margin:8px 0 16px">
-<label for="videoFile"><strong>Archivo de video</strong></label>
-<input id="videoFile" type="file" accept="video/*">
-<button class="btn" id="publishBtn" type="button">Agregar video</button>
-<p class="status" id="status" role="status" aria-live="polite"></p>
-<p class="hint">Prototipo local: los videos se guardan en este navegador y no se suben a internet ni aparecen en otros celulares.</p>
-</div>
-</div></section>
 </main>
 
-<footer><div class="wrap foot"><span>© <span id="year"></span> Realidades Invisibles · Proyecto escolar</span><span>Informar con respeto también es prevenir.</span></div></footer>
+<footer><div class="wrap foot">
+  <span>© <span id="year"></span> Realidades Invisibles · Todos los derechos reservados a Ezequiel Gullotta, Viviana Suero, Ian Di Rosa y Estrella Ortiz.</span>
+  <span>Informar con respeto también es prevenir.</span>
+</div></footer>
 
 <script>
-const DB_NAME='realidades-invisibles', STORE='videos';
-const openDB=()=>new Promise((resolve,reject)=>{
-  const r=indexedDB.open(DB_NAME,1);
-  r.onupgradeneeded=()=>r.result.createObjectStore(STORE,{keyPath:'id',autoIncrement:true});
-  r.onsuccess=()=>resolve(r.result);
-  r.onerror=()=>reject(r.error);
-});
-
-async function allVideos(){
-  try{
-    const db=await openDB();
-    return new Promise((res,rej)=>{
-      const r=db.transaction(STORE).objectStore(STORE).getAll();
-      r.onsuccess=()=>res(r.result);
-      r.onerror=()=>rej(r.error);
-    });
-  }catch(e){return [];}
-}
-
-async function addVideo(item){
-  const db=await openDB();
-  return new Promise((res,rej)=>{
-    const r=db.transaction(STORE,'readwrite').objectStore(STORE).add(item);
-    r.onsuccess=()=>res(r.result);
-    r.onerror=()=>rej(r.error);
-  });
-}
-
-async function render(){
-  const root=document.getElementById('videoList');
-  const items=await allVideos();
-  root.innerHTML='';
-  if(!items.length){
-    root.innerHTML='<div class="empty" style="grid-column:1/-1">Todavía no hay videos generales publicados en este dispositivo. ¡Pronto vas a encontrar nuestras entrevistas acá!</div>';
-    return;
-  }
-  items.sort((a,b)=>b.created-a.created).forEach(item=>{
-    const card=document.createElement('article');card.className='video-card';
-    const video=document.createElement('video');video.controls=true;video.preload='metadata';video.src=URL.createObjectURL(item.blob);
-    const info=document.createElement('div');info.className='video-info';
-    const title=document.createElement('h3');title.textContent=item.title;
-    const date=document.createElement('p');date.textContent=new Date(item.created).toLocaleDateString('es-AR');
-    info.append(title,date);card.append(video,info);root.append(card);
-  });
-}
-
-document.getElementById('publishBtn').addEventListener('click',async()=>{
-  const file=document.getElementById('videoFile').files[0];
-  copyTitle = document.getElementById('videoTitle').value.trim();
-  const status=document.getElementById('status');
-  if(!file){status.textContent='Elegí un archivo de video primero.';return}
-  if(!copyTitle){status.textContent='Escribí un título para la entrevista.';return}
-  if(!file.type.startsWith('video/')){status.textContent='El archivo seleccionado no parece un video.';return}
-  status.textContent='Guardando video…';
-  try{
-    await addVideo({title:copyTitle,blob:file,created:Date.now()});
-    document.getElementById('videoTitle').value='';
-    document.getElementById('videoFile').value='';
-    status.textContent='Video agregado en este navegador.';
-    await render();
-  }catch(e){status.textContent='No se pudo guardar. Probá con un video más pequeño.';}
-});
-
-document.getElementById('year').textContent=new Date().getFullYear();
-render();
+document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
