@@ -160,7 +160,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 </div>
 
 <!-- ESPACIO ÚNICO PARA YOUTUBE CON TÍTULO EN GRANDE -->
-<div class="unified-video-slot" id="video-youtube">
+<div class="https://www.youtube.com/watch?v=aaL339CLyVQ">
   <h2 class="yt-big-title">VIDEO DE LAS ENTREVISTAS <span>EN YOUTUBE</span></h2>
   <p class="yt-subtitle">Mirá las respuestas y reflexiones de la comunidad frente a las cuatro preguntas del proyecto.</p>
 
